@@ -1,0 +1,135 @@
+:root {
+  --text: #2b3e50;
+  --background: #f1f1f3;
+  --primary: #3398db;
+  --secondary: #354a5f;
+  --accent: #e74d3c;
+}
+
+html.dark {
+  --text: #afc2d4;
+  --background: #0c0c0e;
+  --primary: #2489cc;
+  --secondary: #a0b5ca;
+  --accent: #c32918;
+}
+
+/* Layout Container */
+.layout {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Content Frame */
+.content-frame {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 4%;
+  bottom: 4%;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid var(--text);
+}
+
+html.dark .content-frame {
+  border-color: var(--text);
+}
+
+/* Translucent Background */
+.translucent-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as needed */
+  z-index: 2;
+}
+
+html.dark .translucent-background {
+  background-color: rgba(12, 12, 14, 0.8); /* Adjust opacity as needed */
+}
+
+/* Content Container */
+.content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+/* Theme Switch */
+.theme-switch {
+  position: fixed;
+  right: 4%;
+  top: 2%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.theme-switch span {
+  margin-left: 0.5rem;
+}
+
+/* Navbar Styles */
+nav {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  z-index: 4;
+  margin: 20px;
+  flex-direction: column;
+  pointer-events: all;
+  padding-left: 52px;
+  bottom: 0;
+  padding-bottom: 36px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 40px;
+}
+
+nav ul li {
+  margin: 0 15px;
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 400;
+}
+
+nav ul li:hover {
+  font-weight: 800;
+}
+
+html.dark nav ul li {
+  color: var(--text);
+}
+
+/* General Content Styles */
+.content {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  padding: 20px;
+  color: var(--text);
+  z-index: 3;
+}
+
+html.dark .content {
+  color: var(--text);
+}
