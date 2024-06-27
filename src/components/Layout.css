@@ -1,19 +1,4 @@
-:root {
-  --text: #2b3e50;
-  --background: #f1f1f3;
-  --primary: #3398db;
-  --secondary: #354a5f;
-  --accent: #e74d3c;
-}
-
-html.dark {
-  --text: #afc2d4;
-  --background: #0c0c0e;
-  --primary: #2489cc;
-  --secondary: #a0b5ca;
-  --accent: #c32918;
-}
-
+/*src/components/Layout.css*/
 /* Layout Container */
 .layout {
   position: relative;
@@ -21,7 +6,22 @@ html.dark {
   height: 100vh;
   overflow: hidden;
   background-color: var(--background);
-  color: var(--text);
+
+}
+
+/* Solid Background */
+.solid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  z-index: 0;
+}
+
+html.dark .solid-background {
+  background-color: var(--background);
 }
 
 /* Content Frame */
@@ -34,6 +34,9 @@ html.dark {
   overflow: hidden;
   z-index: 1;
   border: 1px solid var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 html.dark .content-frame {
@@ -47,12 +50,12 @@ html.dark .content-frame {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as needed */
+  background-color: rgba(255, 255, 255, 0.8);
   z-index: 2;
 }
 
 html.dark .translucent-background {
-  background-color: rgba(12, 12, 14, 0.8); /* Adjust opacity as needed */
+  background-color: rgba(12, 12, 14, 0.7);
 }
 
 /* Content Container */
@@ -61,16 +64,17 @@ html.dark .translucent-background {
   width: 100%;
   height: 100%;
   z-index: 3;
+  overflow: auto;
 }
 
 /* Theme Switch */
 .theme-switch {
-  position: fixed;
-  right: 4%;
+  position: absolute;
+  right: 1%;
   top: 2%;
-  display: flex;
   align-items: center;
   cursor: pointer;
+  z-index: 3;
 }
 
 .theme-switch input {
@@ -81,18 +85,17 @@ html.dark .translucent-background {
   margin-left: 0.5rem;
 }
 
-/* Navbar Styles */
 nav {
   position: absolute;
   width: 100%;
   display: flex;
   z-index: 4;
-  margin: 20px;
+  margin: 16px;
   flex-direction: column;
   pointer-events: all;
-  padding-left: 52px;
   bottom: 0;
-  padding-bottom: 36px;
+  padding-bottom: 8px;
+  font-size: large;
 }
 
 nav ul {
@@ -108,28 +111,42 @@ nav ul {
 nav ul li {
   margin: 0 15px;
   cursor: pointer;
-  color: var(--text);
-  font-weight: 400;
 }
 
-nav ul li:hover {
-  font-weight: 800;
+nav ul li:active {
+  color:red
 }
 
-html.dark nav ul li {
-  color: var(--text);
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .content-frame {
+    left: 3%;
+    right: 3%;
+    top: 3%;
+    bottom: 3%;
+  }
+
+  .navbar {
+    padding-bottom: 10px;
+  }
 }
 
-/* General Content Styles */
-.content {
-  position: absolute;
-  top: 60px;
-  width: 100%;
-  padding: 20px;
-  color: var(--text);
-  z-index: 3;
-}
+@media (max-width: 768px) {
+  .content-frame {
+    left: 2%;
+    right: 2%;
+    top: 2%;
+    bottom: 2%;
+  }
 
-html.dark .content {
-  color: var(--text);
+  .navbar {
+    padding-bottom: 5px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

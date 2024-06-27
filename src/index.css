@@ -2,3 +2,127 @@
 @tailwind components;
 @tailwind utilities;
 
+/* index.css */
+
+/* Root styles */
+:root {
+  --text: #1a1a1a; /* Default text color for light mode */
+  --background: #ffffff; /* Default background color for light mode */
+  --primary-100: #F2E6FF;
+  --primary-200: #D9B3FF;
+  --primary-300: #C080FF;
+  --primary-400: #A64DFF;
+  --primary-500: #8C1AFF; /* royal purple */
+  --primary-600: #7313E6;
+  --primary-700: #590EBF;
+  --primary-800: #400999;
+  --primary-900: #260573;
+  --secondary-500: #1AFF5C; /* green */
+  --secondary-100: #E6FFEB;
+  --secondary-200: #B3FFC7;
+  --secondary-300: #80FFA3;
+  --secondary-400: #4DFF80;
+  --secondary-600: #13E64C;
+  --secondary-700: #0EBF3D;
+  --secondary-800: #09992D;
+  --secondary-900: #05731E;
+  --accent-500: #1A75FF; /* blue */
+  --accent-100: #E6F0FF;
+  --accent-200: #B3D1FF;
+  --accent-300: #80B3FF;
+  --accent-400: #4D94FF;
+  --accent-600: #1360E6;
+  --accent-700: #0E4DBF;
+  --accent-800: #093A99;
+  --accent-900: #052673;
+  --red-500: #FF1A1A; /* red */
+  --red-100: #FFE6E6;
+  --red-200: #FFB3B3;
+  --red-300: #FF8080;
+  --red-400: #FF4D4D;
+  --red-600: #E61313;
+  --red-700: #BF0E0E;
+  --red-800: #990909;
+  --red-900: #730505;
+  --yellow-500: #FFA31A; /* yellow/orange */
+  --yellow-100: #FFF3E6;
+  --yellow-200: #FFE0B3;
+  --yellow-300: #FFCC80;
+  --yellow-400: #FFB84D;
+  --yellow-600: #E68F13;
+  --yellow-700: #BF7A0E;
+  --yellow-800: #996609;
+  --yellow-900: #734F05;
+}
+
+/* Dark mode styles */
+.dark {
+  --text: #e0e0e0; /* Text color for dark mode */
+  --background: #121212; /* Background color for dark mode */
+  --primary-100: #260573;
+  --primary-200: #400999;
+  --primary-300: #590EBF;
+  --primary-400: #7313E6;
+  --primary-500: #8C1AFF; /* royal purple */
+  --primary-600: #A64DFF;
+  --primary-700: #C080FF;
+  --primary-800: #D9B3FF;
+  --primary-900: #F2E6FF;
+  --secondary-100: #05731E;
+  --secondary-200: #09992D;
+  --secondary-300: #0EBF3D;
+  --secondary-400: #13E64C;
+  --secondary-500: #1AFF5C; /* green */
+  --secondary-600: #4DFF80;
+  --secondary-700: #80FFA3;
+  --secondary-800: #B3FFC7;
+  --secondary-900: #E6FFEB;
+  --accent-100: #052673;
+  --accent-200: #093A99;
+  --accent-300: #0E4DBF;
+  --accent-400: #1360E6;
+  --accent-500: #1A75FF; /* blue */
+  --accent-600: #4D94FF;
+  --accent-700: #80B3FF;
+  --accent-800: #B3D1FF;
+  --accent-900: #E6F0FF;
+  --red-100: #730505;
+  --red-200: #990909;
+  --red-300: #BF0E0E;
+  --red-400: #E61313;
+  --red-500: #FF1A1A; /* red */
+  --red-600: #FF4D4D;
+  --red-700: #FF8080;
+  --red-800: #FFB3B3;
+  --red-900: #FFE6E6;
+  --yellow-100: #734F05;
+  --yellow-200: #996609;
+  --yellow-300: #BF7A0E;
+  --yellow-400: #E68F13;
+  --yellow-500: #FFA31A; /* yellow/orange */
+  --yellow-600: #FFB84D;
+  --yellow-700: #FFCC80;
+  --yellow-800: #FFE0B3;
+  --yellow-900: #FFF3E6;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.navbar ul li {
+  transition: color 0.3s;
+}
+
+.navbar ul li:hover {
+  color: var(--primary-500);
+}
+
+button {
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent-500);
+}

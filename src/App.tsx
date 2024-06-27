@@ -1,36 +1,20 @@
-// src/App.tsx
 import React, { useState } from 'react';
 import Layout from './components/Layout';
-import Home from './components/Home';
-import AboutMe from './components/AboutMe';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
 
-type Page = 'home' | 'about' | 'services' | 'portfolio' | 'contact';
+import LoadingScreen from './components/LoadingScreen';
+import { NavigationProvider } from './components/NavigationContext';
 
 const App: React.FC = () => {
-  const [activePage, setActivePage] = useState<Page>('home');
-
-  const renderContent = () => {
-    switch (activePage) {
-      case 'about':
-        return <AboutMe />;
-      case 'services':
-        return <Services />;
-      case 'portfolio':
-        return <Portfolio />;
-      case 'contact':
-        return <Contact />;
-      default:
-        return <Home />;
-    }
-  };
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <Layout setActivePage={setActivePage}>
-      {renderContent()}
-    </Layout>
+    <main>
+      <NavigationProvider>
+        <Layout>
+          {!isLoaded && <LoadingScreen onLoaded={() => setIsLoaded(true)} />}
+        </Layout>
+      </NavigationProvider>
+    </main>
   );
 };
 
